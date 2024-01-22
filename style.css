@@ -272,6 +272,79 @@ section{
     text-decoration: underline;
 }
 
+.slider {
+    width: 100%;
+    height: 600px;
+    margin-top: 70px;
+    margin-bottom: 5px;
+    background-color: var(--box-shadow);
+}
+
+.carousel {
+    width: 100%;
+    height: 600px;
+    /* border-radius: 16px; */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    display: flex;
+
+    /* 過度動畫 1s */
+    transition: all 1s;
+}
+
+.carousel .container a {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.carousel .container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .shift .left {
+    left: 20px;
+}
+.carousel .shift .right {
+    right: 20px;
+}
+
+.carousel .bottom {
+    position: absolute;
+    bottom: 20px;
+
+    /* 絕對位置、垂直置中 */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+.carousel .bottom .indicator {
+    height: 5px;
+    width: 40px;
+    background-color: var(--light-color);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.carousel:hover .bottom .indicator {
+    opacity: 1;
+}
+.carousel:hover .shift .btn {
+    opacity: 1;
+}
 
 .home{
     display: flex;
@@ -584,76 +657,3 @@ section{
 
 }
 
-.slider {
-    width: 100%;
-    height: 600px;
-    margin-top: 69px;
-    margin-bottom: 6px;
-    background-color: var(--box-shadow);
-}
-
-.carousel {
-    width: 100%;
-    height: 600px;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel .container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    left: 0;
-    display: flex;
-
-    /* 過度動畫 1s */
-    transition: all 1s;
-}
-
-.carousel .container a {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-}
-
-.carousel .container a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel .shift .left {
-    left: 20px;
-}
-.carousel .shift .right {
-    right: 20px;
-}
-
-.carousel .bottom {
-    position: absolute;
-    bottom: 20px;
-
-    /* 絕對位置、垂直置中 */
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: max-content;
-    display: flex;
-    gap: 10px;
-}
-
-.carousel .bottom .indicator {
-    height: 5px;
-    width: 40px;
-    background-color: var(--light-color);
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-.carousel:hover .bottom .indicator {
-    opacity: 1;
-}
-.carousel:hover .shift .btn {
-    opacity: 1;
-}
