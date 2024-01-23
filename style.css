@@ -674,16 +674,17 @@ section{
     /* border: 1px solid rgb(0, 0, 0); */
 }
 .top{
-    width: 100px;
+    width: 200px;
     display: flex;
     box-sizing: content-box;
     justify-content:center;
-    padding: 60px 20px;
+    margin-top: 30px;
+    padding: 20px 20px;
     /* align-items: center; */
     font-size: 0.7cm;
 }
 table{
-    width: 900px;
+    width: 1000px;
     text-align: center;
     margin: 0 auto;  
 }
