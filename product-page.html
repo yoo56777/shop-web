@@ -13,6 +13,11 @@
     <!-- css link -->
     <link rel="stylesheet" href="style.css">;
 
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- SimplePagination連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+
 </head>
 
 <body>
@@ -92,13 +97,41 @@
 
 <!-- product section starts -->
 
-<div style="height: 500px;">
+<h1 style="margin-top: 100px; font-size: 30px; text-align: center; color: #130f40">分頁系統</h1>
+    
+<!-- 所有項目 -->
+<div id="list-wrapper">
+    
+    <!-- 項目 -->
+    <div class="list-item">
+        <p>1</p>
+    </div>
+    <div class="list-item">
+        <p>2</p>
+    </div>
+    <div class="list-item">
+        <p>3</p>
+    </div>
+    <div class="list-item">
+        <p>4</p>
+    </div>
+    <div class="list-item">
+        <p>5</p>
+    </div>
+    <div class="list-item">
+        <p>6</p>
+    </div>
+    <div class="list-item">
+        <p>7</p>
+    </div>
+    <div class="list-item">
+        <p>8</p>
+    </div>
 
-    <section>
-        <div>
+</div>
 
-        </div>
-    </section>
+<!-- 頁數 -->
+<div id="pagination-container">
 
 </div>
 
@@ -153,12 +186,33 @@
 
 <!-- footer section ends -->
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- js link -->
 <script src="script.js"></script>
 
+
 </body>
 </html>
+
+<!-- JQuery程式 -->
+<script>
+    // 每個頁面要顯示幾格項目
+    var perPage = 3;
+    // 總共有多少個項目
+    var numItems = $(".list-item").length;
+     
+    $(".list-item").slice(perPage).hide();
+    $('#pagination-container').pagination({
+        items: numItems,
+        itemsOnPage: perPage,
+        prevText: "&laquo;",
+        nextText: "&raquo;",
+        onPageClick: function(pageNumber){
+            // 計算 起始以及結束
+            var from = perPage * (pageNumber - 1);
+            var to = from + perPage;
+            $(".list-item").hide().slice(from, to).show();
+        }
+    })
+</script>
