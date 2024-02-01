@@ -104,12 +104,12 @@
     
 <!-- 所有項目 -->
 <div class="row" id="list-wrapper">
-    <script>
+    <!-- <script>
         let row = getByTag()
-    </script>    
+    </script>  -->
     
     <!-- 項目 -->
-    <!-- <div class="list-item">
+    <div class="list-item">
         <div class="one-product">
             <img src="image/product1.jpg" alt="">
             <h3>watermalon</h3>
@@ -172,14 +172,17 @@
             <div class="price"> $ 100 </div>
             <a href="#" class="btn">add to cart</a>
         </div>
-    </div> -->
+    </div>
 
 </div>
+
 
 <!-- 頁數 -->
 <div id="pagination-container">
 
 </div>
+
+
 
 <!-- product section ends -->
 
@@ -243,7 +246,7 @@
 
 <!-- JQuery程式 -->
 <script>
-    function setpage() {
+    // function setpage() {
         // 每個頁面要顯示幾格項目
         var perPage = 4;
         // 總共有多少個項目
@@ -262,6 +265,6 @@
                 $(".list-item").hide().slice(from, to).show();
             }
         })
-    }
+    // }
 
 </script>
